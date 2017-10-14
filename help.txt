@@ -1,1 +1,18 @@
+
+Cria time line:
+https://timeline.knightlab.com/#preview-embed (Seguir passos)
+
+Edita dados
+https://docs.google.com/spreadsheets/d/1y0lKJOGR4IWUuGLn2bywmMKteET3D2q1jgpdAozw2WE/edit#gid=0
+
+Cria GitHub, 
+cria branch: gh-pages
+
+Cria Codigo HTML:
+https://jsbin.com/vuwosiqucu/edit?html
+
+Adiciona link do iFrame do timeline no body
+
+Adiciona um novo arquivo timeLine.html com o codigo gerado acima
+
 https://comunello.github.io/infoVis/timeLine.html -> Para acessar as paginas. (CaseSensitive)
