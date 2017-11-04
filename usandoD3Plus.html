@@ -8,19 +8,19 @@
 <body>
 <!doctype html>
 <meta charset="utf-8">
-
+<p>Usando el D3Plus</p>
 <!-- load D3js -->
 <script src="//d3plus.org/js/d3.js"></script>
 
 <!-- load D3plus after D3js -->
 <script src="//d3plus.org/js/d3plus.js"></script>
 
-  <p>Usando el D3Plus</p>
+  
 <!-- create container element for visualization -->
 <div id="viz"></div>
 
 <script>
-    var data_E = [
+    var sample_data = [
     {"year": 1965, "name": "Ingeniero Electronico", "value": "8"},
     {"year": 1965, "name": "Ingeniero en Armas", "value": "6"},
     {"year": 1965, "name": "Ingeniero Industrial", "value": "5"},
@@ -393,7 +393,7 @@
 
 var chart = d3plus.viz()
     .container("#viz")
-    .data(data_E)
+    .data(sample_data)
     .type("stacked")
     .y("cant")
     .x("año")
@@ -402,9 +402,7 @@ var chart = d3plus.viz()
     .format("pt_BR")
     .time("año")
     .shape({"interpolate":"basis"})
-    .draw();
-
- 
+    .draw()
 </script>
 </body>
 </html>
