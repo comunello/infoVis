@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>Usando el D3Plus</title>
 </head>
 <body>
 <!doctype html>
@@ -15,6 +15,7 @@
 <!-- load D3plus after D3js -->
 <script src="//d3plus.org/js/d3plus.js"></script>
 
+  <p>Usando el D3Plus</p>
 <!-- create container element for visualization -->
 <div id="viz"></div>
 
@@ -26,7 +27,7 @@ var url = 'https://raw.githubusercontent.com/aaizemberg/vis/gh-pages/graduados/d
 
 var chart = d3plus.viz()
     .container("#viz")
-    .data(sample_data)
+    .data(url)
     .type("stacked")
     .y("cant")
     .x("año")
