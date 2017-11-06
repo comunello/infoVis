@@ -100,8 +100,11 @@
     }
   }
   google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+   <script>
 var url = 'https://comunello.github.io/infoVis/dadosTabela.tsv'
-d3.tsv(url,
+function grafica() {
+  d3.tsv(url,
         function(error, data) {
             callbackError = error;
             callbackData = data;
@@ -127,7 +130,26 @@ d3.tsv(url,
 							.y("valorCompra")         // key to use for y-axis
 							.x("date")          // key to use for x-axis
 							.draw();             // finally, draw the visualization!
+  
+  
+  
 });	
+  
+}
+function start() {
+  if (document.contains(document.getElementById("viz"))) {
+    document.getElementById("viz").remove();
+  }   
+         
+  var $div = $("<div>", {id: "viz"}); 
+
+  $("#boxGrafico").append($div);
+  grafica()
+}
+
+$(document).ready(function() {
+  $("#callBox").click(start);
+});
 </script>
 
 
@@ -136,7 +158,11 @@ d3.tsv(url,
 Mapa:
   <div id="googft-mapCanvas"></div>
   Grafico:
-  <div id="viz"></div>
+  <div id="callBox">Click para gerar grafico</div>
+  <div id="boxGrafico" style= 
+"height: 220px;
+    width: 330px;
+    "></div>
   
    <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdOK2VV-en3abcJzuptFJY9mSCW7LZZZM&callback=initMap">
