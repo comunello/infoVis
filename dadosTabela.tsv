@@ -1,4 +1,4 @@
-id	date	cant	valorCompra	valorTotalVenda	 valorPromedio 	 valorVendaProme 	crecimentoVenda	crecimentoPosVenda		inflacion
+id	date	cant	valorCompra	valorTotalVenda	valorPromedio	valorVendaProme	crecimentoVenda	crecimentoPosVenda	inflacion
 1	01jan15	20	132.30	4914	189.00	283.50		0.5	0.3	0
 1	01fev15	24	113.40	5897	226.80	294.84	1.2	0.3	0.1	0
 1	01mar15	34	145.53	9081	264.60	378.38	1.4	0.3	0.1	0.1
