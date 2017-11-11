@@ -114,10 +114,12 @@
 			document.getElementById("viz").remove();
 		  }   
          
-		var $div = $("<div>", {id: "viz"}); 
-
-		$('.boxGraf').append($div);
-         grafica(); 
+		var divMaps = document.createElement('div'); 
+		divMaps.setAttribute("id", "viz");
+		
+		document.getElementsByClassName("boxGraf")[0].appendChild(divMaps);
+		
+         	grafica(); 
         });
     
 
