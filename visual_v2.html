@@ -113,20 +113,8 @@
 		if (document.contains(document.getElementById("viz"))) {
 			document.getElementById("viz").remove();
 		  }   
-         
-		var divMaps = document.createElement('div'); 
-		divMaps.setAttribute("id", "viz");
-		
-		
-		
-		var docTESTE=document.getElementsByClassName("boxGraf");
-		
-		if (document.contains(document.getElementById("viz"))) {
-			alert("Hello! Existe a duiv!!");
-		  }else{
-			  alert("Hello! Nao existe a duiv!!");
-		  }
-
+       
+		_chamada();
          	
         });
     
@@ -155,6 +143,33 @@
   </script>
 
    <script>
+	      var docTESTE;
+ function _chamada() {
+ 
+		
+		
+		var divMaps = document.createElement('div'); 
+		divMaps.setAttribute("id", "viz");
+		
+		document.getElementsByClassName("boxGraf")[0].appendChild(divMaps);
+		
+		var docTESTE=document.getElementsByClassName("boxGraf");
+		
+		if (document.contains(document.getElementById("viz"))) {
+			alert("Hello! Existe a duiv!!");
+		  }else{
+			  alert("Hello! Nao existe a duiv!!");
+		  }
+		
+		var docTESTE=document.getElementsByClassName("boxGraf");
+		
+		if (document.contains(document.getElementById("viz"))) {
+			alert("Hello! Existe a duiv!!");
+		  }else{
+			  alert("Hello! Nao existe a duiv!!");
+		  }
+} 
+	   
 var url = 'https://comunello.github.io/infoVis/dadosTabela.tsv'
 function grafica() {
   d3.tsv(url,
