@@ -1,0 +1,75 @@
+#box {
+    position: relative;
+    padding: 0px;
+    width: 584px;
+    height:318px;
+	display: block;
+	overflow:auto;
+}
+.boxHea{
+    height: 54px;
+    width: 584px;
+    background-color: #6d191f;
+	float: left;
+	clear: none;
+}
+.boxEsq{
+    height: 264px;
+    width: 224px;
+	float: left;
+	clear: none;
+}
+.boxDir{
+    height: 264px;
+    width: 360px;
+	float: left; 
+	clear: none;
+}
+.boxGraf{
+    height: 220px;
+    width: 330px;
+	clear: none;
+	margin-top: 20px;
+	margin-left: 15px;
+	background-image: url("img/fundoGraf.png");
+}
+.infoEsq{
+    height: 54px;
+    width: 224px;
+	clear: none;
+	float: left; 
+}
+.infoDir{
+    height: 54px;
+    width: 360px;
+	clear: none;
+	float: left; 
+}
+.botao{
+	margin: 11px 5px 11px 5px;
+    height: 32px;
+    width: 110px;
+	clear: none;
+	float: left; 
+	background-image: url("img/normal.png");
+	border-radius: 5px;
+	font-family: arial;
+    font-size: 12px;
+}
+.botao:hover { 
+	background-image: url("img/over.png");
+}
+.botao:active { 
+	background-image: url("img/click.png");
+}
+.divoff {
+	display: none;
+}
+.mensageToGraf {
+	text-align: center;
+	font-family:Impact, Charcoal, sans-serif;
+	font-size: 20px;
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+}
