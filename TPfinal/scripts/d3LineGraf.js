@@ -1,3 +1,14 @@
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
+preload([
+	'img/fundoGraf.png'
+	'img/normal.png'
+	'img/click.png'
+	'img/over.png'
+]);
 function _chamada(teste) {
 	$(document).on('mouseover mouseout', '.boxGraf', function(){
 		var $div = $("<div>", {id: "viz"}); 
