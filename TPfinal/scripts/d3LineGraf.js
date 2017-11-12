@@ -4,9 +4,9 @@ function preload(arrayOfImages) {
     });
 }
 preload([
-	'img/fundoGraf.png'
-	'img/normal.png'
-	'img/click.png'
+	'img/fundoGraf.png',
+	'img/normal.png',
+	'img/click.png',
 	'img/over.png'
 ]);
 function _chamada(teste) {
