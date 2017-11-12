@@ -151,7 +151,7 @@
 		var divMaps = document.createElement('div'); 
 		divMaps.setAttribute("id", "viz");
 		
-		document.getElementsByClassName("boxGraf")[0].appendChild(divMaps);
+		//document.getElementsByClassName("boxGraf")[0].appendChild(divMaps);
 		
 		var docTESTE=document.getElementsByClassName("boxGraf");
 		
@@ -160,14 +160,16 @@
 		  }else{
 			  alert("Hello! Nao existe a duiv!!");
 		  }
+	 
+	 
+		if (document.contains(document.getElementsByClassName("boxGraf"))) {
+			alert("Hello! Existe a duiv!!CLASS");
+		  }else{
+			  alert("Hello! Nao existe a duiv!!CLASS");
+		  }
 		
 		var docTESTE=document.getElementsByClassName("boxGraf");
-		
-		if (document.contains(document.getElementById("viz"))) {
-			alert("Hello! Existe a duiv!!");
-		  }else{
-			  alert("Hello! Nao existe a duiv!!");
-		  }
+
 } 
 	   
 var url = 'https://comunello.github.io/infoVis/dadosTabela.tsv'
