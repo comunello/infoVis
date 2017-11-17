@@ -26,9 +26,9 @@ function _chamada() {
 			
 			$(".boxEsq").children(".textCont:eq(3)").append($("<p>", {id: "VendaT"}));
 			$(".boxEsq").children( ".textCont:eq(3)" ).append($("<p>", {id: "VendaV"}));
-			$(".textCont:eq(0)").children( "#CompraV" ).append($("<span>", {id: "VendaPos",class: "valores"}));
+			$(".textCont:eq(0)").children( "#CompraV" ).append($("<span>", {id: "Venda",class: "valores"}));
 			
-            grafica3($('.containerID').text(),"total");
+            //grafica3($('.containerID').text(),"total");
 			
 			
 		}else{
@@ -48,6 +48,7 @@ $(".infoDir").children( ".botao").click(function() {
 
 function _chamadaBotao(_recebo) {
 	var retorno = {type:"",Compra:0,Venda:0,PosVenda:0};
+	
 
 	if (document.contains(document.getElementById("viz"))) {
 
@@ -86,8 +87,6 @@ function grafica(_id) {
 	});	
 }
 
-
-
 function grafica3(_id,_type) {
 
   var filterId2 ;
@@ -116,36 +115,27 @@ function grafica3(_id,_type) {
 		filterId2 = data.filter(function(d) { return d.id ==_id && 
                  _subst(d.Descrip,_type); });
 
-		if(_type=="total"){
-			 retorno = {type:"total",Compra:d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
-								function(d) {return d.Value; });,
-								Venda:d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Venda");}), 
-								function(d) {return d.Value; });
-								,PosVenda:d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
-								function(d) {return d.Value; });};
-			sum.PosVenda =
-		}else if (_type=="promedio"){
-			mean.Compra =  d3.mean(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
-								function(d) {return d.Value; });
-			mean.Venda = d3.mean(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Venda");}), 
-								function(d) {return d.Value; });
-			mean.PosVenda =d3.mean(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
-								function(d) {return d.Value; });
-		}else
-			alert("type incorreto: "+_type);
+			console.log(filterId2);
+//		retorno.Compra =  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
+	//						function(d) {return d.Value; });
+		//retorno.Venda = d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Venda");}), 
+			//				function(d) {return d.Value; });
+	//	retorno.PosVenda =d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
+		//					function(d) {return d.Value; });
 
-console.log(filterId2);
-          var visualization = d3plus.viz()
-								.container("#viz2")  // container DIV to hold the visualization
-								.data(filterId2)  // data to use with the visualization
-								.type("line")       // visualization type
-                                .id(["Descrip"])
-								.y("Value")         // key to use for y-axis
-								.x("date")          // key to use for x-axis
-								.draw();  
+
+
+       //   var visualization = d3plus.viz()
+		//						.container("#viz")  // container DIV to hold the visualization
+			//					.data(filterId2)  // data to use with the visualization
+				//				.type("line")       // visualization type
+                  //              .id(["Descrip"])
+					//			.y("Value")         // key to use for y-axis
+						//		.x("date")          // key to use for x-axis
+							//	.draw();  
      
 
    
 	});	
 }
-grafica3(1,"total");
+//grafica3(1,"total");
