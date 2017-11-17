@@ -87,7 +87,7 @@ function grafica(_id) {
 }
 
 function grafica3(_id,_type) {
-var retorno = {type:"",Compra:0,Venda:0,PosVenda:0};
+
   var filterId2 ;
 	d3.tsv(url,
         function(error, data) {
@@ -114,18 +114,17 @@ var retorno = {type:"",Compra:0,Venda:0,PosVenda:0};
 		filterId2 = data.filter(function(d) { return d.id ==_id && 
                  _subst(d.Descrip,_type); });
 				 
-		alert("Teste: "+_type);
 
-		retorno.type = _type;
+
 		//console.log(filterId2);
-		retorno.Compra =  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
+		var _Compra 	=  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
 							function(d) {return d.Value; });
-		//retorno.Venda = d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Venda");}), 
-			//				function(d) {return d.Value; });
-	//	retorno.PosVenda =d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
-		//					function(d) {return d.Value; });
+		var _Venda 		=  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Venda");}), 
+							function(d) {return d.Value; });
+		var _PosVenda 	=  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
+							function(d) {return d.Value; });
 
-		alert("Teste2: "+retorno.Compra);
+		alert("Teste1: "+_Compra + " " + _Venda + " " + _PosVenda);
 
        //   var visualization = d3plus.viz()
 		//						.container("#viz")  // container DIV to hold the visualization
@@ -136,7 +135,12 @@ var retorno = {type:"",Compra:0,Venda:0,PosVenda:0};
 						//		.x("date")          // key to use for x-axis
 							//	.draw();  
      
-		return retorno;
+		return {
+        type: _type,
+        compra: _Compra,
+        venda: _Venda,
+		posVenda:_PosVenda
+    };
    
 	});	
 }
