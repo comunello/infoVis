@@ -13,6 +13,12 @@
 	float: left;
 	clear: none;
 }
+.overTextCont{
+    height: 54px;
+    width: 224px;
+	clear: none;
+	float: left; 
+}
 .boxEsq{
     height: 264px;
     width: 224px;
@@ -72,7 +78,6 @@
 	margin: 4px 17px 4px 17px;
 	height: 80px;
     width: 190px;
-	background-color: #6d191f;
 	clear: none;
 	float: left; 
 }
