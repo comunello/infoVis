@@ -27,7 +27,7 @@ function _chamada() {
             $(document).off('mouseover mouseout');
 			alert("Chamada2");
            
-			var retorno = grafica3($('.containerID').text(),"total");
+			var retorno = new grafica3($('.containerID').text(),"total");
 			alert("Teste3: "+retorno.Compra);
 			
 		}else{
@@ -136,11 +136,11 @@ function grafica3(_id,_type) {
 							//	.draw();  
      
 		return {
-        type: _type,
-        compra: _Compra,
-        venda: _Venda,
-		posVenda:_PosVenda
-    };
+			type: _type,
+			compra: _Compra,
+			venda: _Venda,
+			posVenda:_PosVenda
+		};
    
 	});	
 }
