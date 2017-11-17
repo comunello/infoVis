@@ -1,3 +1,15 @@
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
+preload([
+	'img/fundoGraf.png',
+	'img/normal.png',
+	'img/click.png',
+	'img/over.png'
+]);
+
 function _chamada() {
     $(document).on('mouseover mouseout', '.boxGraf', function(){
 		var $div = $("<div>", {id: "viz"}); 
@@ -13,22 +25,8 @@ function _chamada() {
 		
      	if (document.contains(document.getElementById("viz"))) {
             $(document).off('mouseover mouseout');
-			alert("Problemasasdf!!");
-			$(".boxEsq").attr({id: "boxEsq"});
-				
-			$(".boxEsq").children(".textCont:eq(0)").append($("<p>", {id: "CompraT"}));
-			$(".boxEsq").children( ".textCont:eq(0)" ).append($("<p>", {id: "CompraV"}));
-			$(".textCont:eq(0)").children( "#CompraV" ).append($("<span>", {id: "Compra",class: "valores"}));
 			
-			$(".boxEsq").children(".textCont:eq(1)").append($("<p>", {id: "VendaT"}));
-			$(".boxEsq").children( ".textCont:eq(1)" ).append($("<p>", {id: "VendaV"}));
-			$(".textCont:eq(0)").children( "#CompraV" ).append($("<span>", {id: "Venda",class: "valores"}));
-			
-			$(".boxEsq").children(".textCont:eq(3)").append($("<p>", {id: "VendaT"}));
-			$(".boxEsq").children( ".textCont:eq(3)" ).append($("<p>", {id: "VendaV"}));
-			$(".textCont:eq(0)").children( "#CompraV" ).append($("<span>", {id: "Venda",class: "valores"}));
-			
-            //grafica3($('.containerID').text(),"total");
+            grafica3($('.containerID').text(),"total");
 			
 			
 		}else{
@@ -114,16 +112,18 @@ function grafica3(_id,_type) {
    
 		filterId2 = data.filter(function(d) { return d.id ==_id && 
                  _subst(d.Descrip,_type); });
+				 
+		alert("Teste: "+_type);
 
-			console.log(filterId2);
-//		retorno.Compra =  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
-	//						function(d) {return d.Value; });
+			//console.log(filterId2);
+		retorno.Compra =  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
+							function(d) {return d.Value; });
 		//retorno.Venda = d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Venda");}), 
 			//				function(d) {return d.Value; });
 	//	retorno.PosVenda =d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
 		//					function(d) {return d.Value; });
 
-
+		alert("Teste2: "+retorno.Compra);
 
        //   var visualization = d3plus.viz()
 		//						.container("#viz")  // container DIV to hold the visualization
