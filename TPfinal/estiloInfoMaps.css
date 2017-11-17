@@ -33,12 +33,6 @@
 	margin-left: 15px;
 	background-image: url("img/fundoGraf.png");
 }
-.textCont{
-    height: 54px;
-    width: 224px;
-	clear: none;
-	float: left; 
-}
 .infoDir{
     height: 54px;
     width: 360px;
@@ -74,7 +68,7 @@
 	padding: 10px;
 }
 
-.visualText {
+.textCont {
 	margin: 4px 17px 4px 17px;
 	height: 80px;
     width: 190px;
