@@ -19,6 +19,12 @@
 	clear: none;
 	float: left; 
 }
+.infoEsq{
+    height: 54px;
+    width: 224px;
+	clear: none;
+	float: left; 
+}
 .boxEsq{
     height: 264px;
     width: 224px;
