@@ -28,6 +28,7 @@ function _chamada() {
 			alert("Chamada2");
            
 			var retorno = grafica3($('.containerID').text(),"total");
+			alert("Teste3: "+retorno.Compra);
 			
 		}else{
 			  alert("Problemas con a criacao da DIV!!");
@@ -116,7 +117,7 @@ var retorno = {type:"",Compra:0,Venda:0,PosVenda:0};
 		alert("Teste: "+_type);
 
 		retorno.type = _type;
-		console.log(filterId2);
+		//console.log(filterId2);
 		retorno.Compra =  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
 							function(d) {return d.Value; });
 		//retorno.Venda = d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Venda");}), 
