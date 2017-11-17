@@ -13,7 +13,7 @@ function _chamada() {
 		
      	if (document.contains(document.getElementById("viz"))) {
             $(document).off('mouseover mouseout');
-			
+			alert("Problemasasdf!!");
 			$(".boxEsq").attr({id: "boxEsq"});
 				
 			$(".boxEsq").children(".textCont:eq(0)").append($("<p>", {id: "CompraT"}));
