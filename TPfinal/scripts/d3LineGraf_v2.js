@@ -16,7 +16,7 @@ function _chamada() {
 		$(".boxGraf").append($div);
 		
 		
-		
+		alert("Chamada");
 		//$(".infoDir").children( ".botao:eq(0)").attr({id: "botao0"});
 		//$(".infoDir").children( ".botao:eq(1)").attr({id: "botao1"});
 		//$(".infoDir").children( ".botao:eq(2)").attr({id: "botao2"});
@@ -25,7 +25,7 @@ function _chamada() {
 		
      	if (document.contains(document.getElementById("viz"))) {
             $(document).off('mouseover mouseout');
-			
+			alert("Chamada2");
             grafica3($('.containerID').text(),"total");
 			
 			
