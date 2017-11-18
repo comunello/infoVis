@@ -87,3 +87,13 @@
 	clear: none;
 	float: left; 
 }
+.visualText{
+    font-size:14pt;
+    margin: 0 0 0 0;
+}
+.visualTextV {
+    margin: 0 0 0 0;
+}
+.visualTextV span {
+    font-size:23pt;
+}
