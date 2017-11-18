@@ -98,8 +98,14 @@ function grafica3(_id,_type) {
 							function(d) {return d.Value; });
 		_PosVenda 	=  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
 							function(d) {return d.Value; });
+							
+							
+							
+							
 
-		var codes = retorno(_type,_Compra,_Venda,_PosVenda);
+		var codes = retorno(_type,new Intl.NumberFormat('de-DE',{ maximumFractionDigits :2 }).format(_Compra),
+								new Intl.NumberFormat('de-DE',{ maximumFractionDigits :2 }).format(_Venda),
+								new Intl.NumberFormat('de-DE',{ maximumFractionDigits :2 }).format(_PosVenda));
 		
 		_fdp(codes);
 		
