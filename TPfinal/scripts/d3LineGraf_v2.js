@@ -34,9 +34,9 @@ function _chamada() {
      	if (document.contains(document.getElementById("viz"))) {
             $(document).off('mouseover mouseout');
 			
-			
+			var retornoGraf =retorno("",0,0,0);
            
-			var retornoGraf = grafica3($('.containerID').text(),"total");
+			retornoGraf = grafica3($('.containerID').text(),"total");
 			
 			alert("Teste3: "+ retornoGraf.compra);
 			
