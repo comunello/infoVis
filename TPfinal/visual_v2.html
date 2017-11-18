@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Trabajo Final - Visualización de la Información</title>
-		<style type="text/css" src="script/estiloInfoMaps.css"> </style>
+		<link rel="stylesheet" type="text/css" href="estiloInfoMaps.css">
 		<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 		<script src="//d3plus.org/js/d3.js"></script>
 		<script src="//d3plus.org/js/d3plus.js"></script>
@@ -21,15 +21,23 @@
 		<li> <a href="https://support.google.com/fusiontables/answer/2527132?hl=en">Fusion Maps</a> - Para la GeoLocalización y geracion de los puntos. </li>
 		<li> <a href="https://d3js.org/">D3</a>  /  <a href="https://d3plus.org/ ">D3 Plus</a>  - Para criación de los graficos.</li>
 		<li> <a href="https://jquery.com/">Jquery</a> - The Write Less, Do More, JavaScript Library. </li> 
-		<li> <a href="https://www.photoshop.com/">PhotoShop</a>  - Para el desarollo del layout y idea.</li>
+		<li> <a href="https://www.photoshop.com/">PhotoShop</a>  - Para el desarollo del layout y idea. (<a href="https://comunello.github.io/infoVis/TPfinal/img/ideiaTrabalhoVisualizacion.png">idea</a> - <a href="https://comunello.github.io/infoVis/TPfinal/img/ideiaTrabalhoVisualizacion.psd">desarollo</a>)</li>
 	</ul>
 	
+	 	
 	<h2>Datos utilizados:</h2>
-	<dl>Los datos utilizados san ficticios, el objetivo es la visualización. Esa heramienta va a ser utilizada en el futuro como complemento del TP final del posgrado.</dl>
+	<dl>- Los datos utilizados son ficticios, el objetivo del trabajo es el desarollo de la visualización. Esa heramienta será utilizada en el TP final del postgrado.</dl>
 	</br>
 	</br>
-	<h2>Mapa desarollado:</h2>
+	<h2>MAPA:</h2>
 	  <div id="googft-mapCanvas"></div>
+	  	</br>
+	 <h3>Utilización:</h3>
+	 <ol>
+		<li value="1"> Clicar en un punto del mapa;</li>
+		<li> Caso el grafíco no sea generado, pasar el mouse por arriba (Mouse Over);
+		<li> Elegir el agrupador de la información (Total o Promedio);
+	</ol>
 	   <script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdOK2VV-en3abcJzuptFJY9mSCW7LZZZM&callback=initMap">
 		</script>
