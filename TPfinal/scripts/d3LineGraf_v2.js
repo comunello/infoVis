@@ -27,8 +27,8 @@ function _chamada() {
             $(document).off('mouseover mouseout');
 			alert("Chamada2");
            
-			var retorno = new grafica3($('.containerID').text(),"total");
-			alert("Teste3: "+retorno.Compra);
+			var retornoGraf = new grafica3($('.containerID').text(),"total");
+			alert("Teste3: "+retornoGraf.compra);
 			
 		}else{
 			  alert("Problemas con a criacao da DIV!!");
@@ -114,7 +114,7 @@ function grafica3(_id,_type) {
 		filterId2 = data.filter(function(d) { return d.id ==_id && 
                  _subst(d.Descrip,_type); });
 				 
-
+		
 
 		//console.log(filterId2);
 		var _Compra 	=  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
@@ -123,7 +123,13 @@ function grafica3(_id,_type) {
 							function(d) {return d.Value; });
 		var _PosVenda 	=  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
 							function(d) {return d.Value; });
-
+		retorno = {};
+		retorno.type = _type;
+		    retorno.compra = _Compra;
+		    retorno.venda = _Venda;
+		 retorno.posVenda = _PosVenda;
+		   
+		 
 		alert("Teste1: "+_Compra + " " + _Venda + " " + _PosVenda);
 
        //   var visualization = d3plus.viz()
@@ -135,12 +141,7 @@ function grafica3(_id,_type) {
 						//		.x("date")          // key to use for x-axis
 							//	.draw();  
      
-		return {
-			type: _type,
-			compra: _Compra,
-			venda: _Venda,
-			posVenda:_PosVenda
-		};
+		return retorno;
    
 	});	
 }
