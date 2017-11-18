@@ -117,10 +117,6 @@ function grafica3(_id,_type) {
 		codes = retorno(_type,_Compra,_Venda,_PosVenda);
 		alert("TESTE1:"+codes.venda);
 		
-		   
-		 
-		alert("Teste1: "+retorno.type + " " + retorno.compra + " " + retorno.posVenda);
-
        //   var visualization = d3plus.viz()
 		//						.container("#viz")  // container DIV to hold the visualization
 			//					.data(filterId2)  // data to use with the visualization
@@ -133,7 +129,7 @@ function grafica3(_id,_type) {
 		
    
 	});	
-	
+	alert("TESTE2:"+codes.venda);
 	return codes;
 }
 //grafica3(1,"total");
