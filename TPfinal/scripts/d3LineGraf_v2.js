@@ -10,6 +10,15 @@ preload([
 	'img/over.png'
 ]);
 
+var retorno = function(a,b,c,d) {
+    return {
+		styl: a,
+        compra: b,
+        venda: c,
+		posVenda:d
+    };
+};
+
 function _chamada() {
     $(document).on('mouseover mouseout', '.boxGraf', function(){
 		var $div = $("<div>", {id: "viz"}); 
@@ -24,6 +33,8 @@ function _chamada() {
 		
      	if (document.contains(document.getElementById("viz"))) {
             $(document).off('mouseover mouseout');
+			
+			
            
 			var retornoGraf = grafica3($('.containerID').text(),"total");
 			
@@ -57,6 +68,8 @@ function _chamadaBotao(_recebo) {
 		 alert("Problemas con a DIV grafica!!");
 	}
 };
+
+
 
 
 function grafica3(_id,_type) {
@@ -94,11 +107,16 @@ var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
 							function(d) {return d.Value; });
 		var _PosVenda 	=  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("PosVenda");}), 
 							function(d) {return d.Value; });
-		retorno = {};
-		retorno.type = _type;
-		retorno.compra = _Compra;
-		retorno.venda = _Venda;
-		retorno.posVenda = _PosVenda;
+
+		//retorno.type = _type;
+		//retorno.compra = _Compra;
+		//retorno.venda = _Venda;
+		//retorno.posVenda = _PosVenda;
+		
+		
+		var codes = newCodes(_type,_Compra,_Venda,_PosVenda);
+		alert("TESTE1:"+codes.venda);
+		
 		   
 		 
 		alert("Teste1: "+retorno.type + " " + retorno.compra + " " + retorno.posVenda);
@@ -112,7 +130,7 @@ var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
 						//		.x("date")          // key to use for x-axis
 							//	.draw();  
      
-		return retorno;
+		return codes;
    
 	});	
 }
