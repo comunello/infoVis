@@ -31,6 +31,15 @@ function _chamada() {
             $(document).off('mouseover mouseout');
 				
 			 retornoGraf = grafica3($('.containerID').text(),"total");
+			 
+			 $("#infoDir").children( ".botao").click(function() {
+				if ($(this).text() == "total" || $(this).text() =="promedio"){
+					alert("Existe");
+					_chamadaBotao(text); 
+				}else
+					alert("NoExiste");
+			});
+			 
 		}else{
 			  alert("Problemas con a criacao da DIV!!");
              $(document).off('mouseover mouseout');
@@ -38,13 +47,7 @@ function _chamada() {
 	});
 }
 
-$("#infoDir").children( ".botao").click(function() {
-    if ($(this).text() == "total" || $(this).text() =="promedio"){
-		alert("Existe");
-		_chamadaBotao(text); 
-	}else
-		alert("NoExiste");
-});
+
 
 function _chamadaBotao(_recebo) {
 	if (document.contains(document.getElementById("viz"))) {
