@@ -60,6 +60,7 @@ body{
 	border-radius: 5px;
 	font-family: arial;
     font-size: 12px;
+	text-align: center;
 }
 .botao:hover { 
 	background-image: url("img/over.png");
@@ -80,13 +81,12 @@ body{
 }
 
 .visualText{
-  margin: 0 0 0 0;
+  margin: 4 12 4 12;
   font-size: 18px;
 }
 
 .visualText span{
   margin: 0 0 0 0;
   font-size: 19px;
-  font-color:red;
   font-weight: bold;
 }
