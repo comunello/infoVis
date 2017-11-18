@@ -114,7 +114,7 @@ var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
 		//retorno.posVenda = _PosVenda;
 		
 		
-		var codes = newCodes(_type,_Compra,_Venda,_PosVenda);
+		var codes = retorno(_type,_Compra,_Venda,_PosVenda);
 		alert("TESTE1:"+codes.venda);
 		
 		   
