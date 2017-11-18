@@ -78,3 +78,15 @@ body{
 	width: 60%;
 	padding: 10px;
 }
+
+.visualText{
+  margin: 0 0 0 0;
+  font-size: 18px;
+}
+
+.visualText span{
+  margin: 0 0 0 0;
+  font-size: 19px;
+  font-color:red;
+  font-weight: bold;
+}
