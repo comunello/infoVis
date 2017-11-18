@@ -90,8 +90,9 @@
 	float: left; 
 }
 .visualText{
-    font-size:14pt;
+    font-size:12pt;
     margin: 0 0 0 0;
+    vertical-align: middle;
 }
 .visualTextV {
     margin: 0 0 0 0;
