@@ -16,7 +16,6 @@ function _chamada() {
 		$(".boxGraf").append($div);
 		
 		
-		alert("Chamada");
 		//$(".infoDir").children( ".botao:eq(0)").attr({id: "botao0"});
 		//$(".infoDir").children( ".botao:eq(1)").attr({id: "botao1"});
 		//$(".infoDir").children( ".botao:eq(2)").attr({id: "botao2"});
@@ -25,10 +24,10 @@ function _chamada() {
 		
      	if (document.contains(document.getElementById("viz"))) {
             $(document).off('mouseover mouseout');
-			alert("Chamada2");
            
-			var retornoGraf = new grafica3($('.containerID').text(),"total");
-			alert("Teste3: "+retornoGraf.compra);
+			var retornoGraf = grafica3($('.containerID').text(),"total");
+			
+			alert("Teste3: "+ retornoGraf.compra);
 			
 		}else{
 			  alert("Problemas con a criacao da DIV!!");
@@ -59,35 +58,9 @@ function _chamadaBotao(_recebo) {
 	}
 };
 
-var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
-function grafica(_id) {
-	d3.tsv(url,
-        function(error, data) {
-            callbackError = error;
-			callbackData = data;
-			data.forEach(function(d) {
-			d.cant = +d.cant;
-			d.valorCompra = +d.valorCompra;
-			d.valorPromedio= +d.valorPromedio;
-			d.valorTotalVenda= +d.valorTotalVenda;
-			d.valorVendaProme= +d.valorVendaProme;
-			d.date= +d.date; //identificar como colocar a data aqui
-			});
-			var filterId = data.filter(function(d) { return d.id ==_id; });
-		//console.log(filterId)
-  
-			var visualization = d3plus.viz()
-								.container("#viz")  // container DIV to hold the visualization
-								.data(filterId)  // data to use with the visualization
-								.type("line")       // visualization type
-								.y("valorCompra")         // key to use for y-axis
-								.x("date")          // key to use for x-axis
-								.draw();             // finally, draw the visualization!
-	});	
-}
 
 function grafica3(_id,_type) {
-
+var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
   var filterId2 ;
 	d3.tsv(url,
         function(error, data) {
@@ -101,20 +74,18 @@ function grafica3(_id,_type) {
 			});
 
       
-      function _subst(check1,check2) {
-        var _n = check2.length;
-        var i = check1.substr(0,_n);
-          if (i == check2) { 
-            return true; 
-          }
-        return false;
-      }
-          
+		function _subst(check1,check2) {
+			var _n = check2.length;
+			var i = check1.substr(0,_n);
+			  if (i == check2) { 
+				return true; 
+			  }
+			return false;
+		}
+  
    
 		filterId2 = data.filter(function(d) { return d.id ==_id && 
                  _subst(d.Descrip,_type); });
-				 
-		
 
 		//console.log(filterId2);
 		var _Compra 	=  d3.sum(filterId2.filter(function(d) { return d.Descrip ==_type.concat("Compra");}), 
@@ -125,12 +96,12 @@ function grafica3(_id,_type) {
 							function(d) {return d.Value; });
 		retorno = {};
 		retorno.type = _type;
-		    retorno.compra = _Compra;
-		    retorno.venda = _Venda;
-		 retorno.posVenda = _PosVenda;
+		retorno.compra = _Compra;
+		retorno.venda = _Venda;
+		retorno.posVenda = _PosVenda;
 		   
 		 
-		alert("Teste1: "+_Compra + " " + _Venda + " " + _PosVenda);
+		alert("Teste1: "+retorno.type + " " + retorno.compra + " " + retorno.posVenda);
 
        //   var visualization = d3plus.viz()
 		//						.container("#viz")  // container DIV to hold the visualization
