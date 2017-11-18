@@ -24,12 +24,12 @@ function _chamada() {
 		var $div = $("<div>", {id: "viz"}); 
 		$(".boxGraf").append($div);
 
-		
+		$(".infoDir").attr("id","infoDir");
 		var codes;
 		
      	if (document.contains(document.getElementById("viz"))) {
             $(document).off('mouseover mouseout');
-           
+				
 			 retornoGraf = grafica3($('.containerID').text(),"total");
 		}else{
 			  alert("Problemas con a criacao da DIV!!");
