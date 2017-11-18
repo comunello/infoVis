@@ -60,7 +60,9 @@
 	background-image: url("img/normal.png");
 	border-radius: 5px;
 	font-family: arial;
-    font-size: 12px;
+    font-size: 18pt;
+    text-align: center;
+    vertical-align: middle;
 }
 .botao:hover { 
 	background-image: url("img/over.png");
