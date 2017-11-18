@@ -34,7 +34,9 @@ function _chamada() {
 			 
 			 $("#infoDir").children( ".botao").click(function() {
 				if ($(this).text() == "total" || $(this).text() =="promedio"){
-					alert("Existe");
+					$( "#viz" ).remove();
+					var $div = $("<div>", {id: "viz"}); 
+					$(".boxGraf").append($div);
 					_chamadaBotao($(this).text()); 
 				}else
 					alert("NoExiste");
