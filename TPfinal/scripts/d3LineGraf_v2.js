@@ -34,9 +34,8 @@ function _chamada() {
      	if (document.contains(document.getElementById("viz"))) {
             $(document).off('mouseover mouseout');
 			
-			var retornoGraf =retorno("",0,0,0);
            
-			retornoGraf = grafica3($('.containerID').text(),"total");
+			var retornoGraf = grafica3($('.containerID').text(),"total");
 			
 			alert("Teste3: "+ retornoGraf.compra);
 			
@@ -73,8 +72,9 @@ function _chamadaBotao(_recebo) {
 
 
 function grafica3(_id,_type) {
-var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
-  var filterId2 ;
+	var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
+	var codes;
+	var filterId2 ;
 	d3.tsv(url,
         function(error, data) {
             callbackError = error;
@@ -114,7 +114,7 @@ var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
 		//retorno.posVenda = _PosVenda;
 		
 		
-		var codes = retorno(_type,_Compra,_Venda,_PosVenda);
+		codes = retorno(_type,_Compra,_Venda,_PosVenda);
 		alert("TESTE1:"+codes.venda);
 		
 		   
@@ -130,8 +130,10 @@ var url = 'https://comunello.github.io/infoVis/TPfinal/dadosTabela.tsv';
 						//		.x("date")          // key to use for x-axis
 							//	.draw();  
      
-		return codes;
+		
    
 	});	
+	
+	return codes;
 }
 //grafica3(1,"total");
